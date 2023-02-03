@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:slutopgavehentnavnogfarve/main.dart';
 
+// Klassen SecondPage er en tilstandsfuld widget, der har en opdateringsmetode og to initialer
+// opdateringsmetoden bruges til at opdatere data i MainPage
+// initialAnimals og initialName bruges til at opdatere oprindelige værdier i denne klasse
+
 class SecondPage extends StatefulWidget {
   final Function updateData;
   final Animals initialAnimals;
   final String initialName;
 
+  // Constructor til at tage de nødvendige værdier som argumenter
   SecondPage({
     required this.updateData,
     required this.initialAnimals,
@@ -16,11 +21,13 @@ class SecondPage extends StatefulWidget {
   _SecondPageState createState() => _SecondPageState();
 }
 
+// Tilstanden for SecondPage klassen, der opdaterer og holder styr på den valgte dyr og navn
 class _SecondPageState extends State<SecondPage> {
   Animals _selectedAnimals = Animals.cat;
   String _name = "";
   final _textController = TextEditingController();
 
+  // initState metoden sætter de oprindelige værdier til de modtagne værdier i konstruktøren
   @override
   void initState() {
     super.initState();
@@ -29,6 +36,7 @@ class _SecondPageState extends State<SecondPage> {
     _textController.text = _name;
   }
 
+  // dispose metoden frigør ressourcerne, når denne klasse ikke længere er aktiv
   @override
   void dispose() {
     _textController.dispose();
@@ -39,7 +47,7 @@ class _SecondPageState extends State<SecondPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Second Page'),
+        title: const Text('Anden side'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -47,14 +55,14 @@ class _SecondPageState extends State<SecondPage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const Text(
-              'Write the name of your......',
+              'Skriv navnet på dit...',
               style: TextStyle(fontSize: 20),
             ),
             for (Animals animals in Animals.values)
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  // This is a radio button that allows the user to select an animal.
+                  // Dette er et radioknap, der gør det muligt for brugeren at vælge et dyr.
                   Radio(
                     value: animals,
                     groupValue: _selectedAnimals,
@@ -67,7 +75,7 @@ class _SecondPageState extends State<SecondPage> {
                   Text(animals.toString().split('.').last),
                 ],
               ),
-            Text("${_selectedAnimals.toString().split('.').last}'s name"),
+            Text("${_selectedAnimals.toString().split('.').last}'s navn"),
             TextField(
               controller: _textController,
               onChanged: (value) {
