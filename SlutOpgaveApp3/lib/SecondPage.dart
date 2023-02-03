@@ -46,7 +46,7 @@ class _SecondPageState extends State<SecondPage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
+            const Text(
               'Write the name of your......',
               style: TextStyle(fontSize: 20),
             ),
@@ -84,7 +84,7 @@ class _SecondPageState extends State<SecondPage> {
           widget.updateData(_selectedAnimals, _name);
           Navigator.pop(context);
         },
-        child: Text(
+        child: const Text(
           'Send',
           style: TextStyle(fontSize: 20),
         ),
