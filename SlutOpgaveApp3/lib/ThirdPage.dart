@@ -30,7 +30,7 @@ class _ThirdPageState extends State<ThirdPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Third Page'),
+        title: const Text('Third Page'),
       ),
       body: Center(
         child: Column(
@@ -48,7 +48,7 @@ class _ThirdPageState extends State<ThirdPage> {
             ),
             DropdownButton<String>(
               value: red,
-              items: [
+              items: const [
                 DropdownMenuItem(
                   value: 'FF0000',
                   child: Text('FF0000'),
@@ -70,7 +70,7 @@ class _ThirdPageState extends State<ThirdPage> {
             ),
             DropdownButton<String>(
               value: green,
-              items: [
+              items: const [
                 DropdownMenuItem(
                   value: '3EFF3E',
                   child: Text('3EFF3E'),
@@ -92,7 +92,7 @@ class _ThirdPageState extends State<ThirdPage> {
             ),
             DropdownButton<String>(
               value: blue,
-              items: [
+              items: const [
                 DropdownMenuItem(
                   value: '7D7DFF',
                   child: Text('7D7DFF'),
@@ -130,7 +130,7 @@ class _ThirdPageState extends State<ThirdPage> {
                   ),
                 );
               },
-              child: Text('Submit'),
+              child: const Text('Submit'),
             )
           ],
         ),

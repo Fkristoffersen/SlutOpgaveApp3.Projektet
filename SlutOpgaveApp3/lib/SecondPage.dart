@@ -17,7 +17,7 @@ class SecondPage extends StatefulWidget {
 }
 
 class _SecondPageState extends State<SecondPage> {
-  Animals _selectedAnimals = Animals.Cat;
+  Animals _selectedAnimals = Animals.cat;
   String _name = "";
   final _textController = TextEditingController();
 
@@ -39,7 +39,7 @@ class _SecondPageState extends State<SecondPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Second Page'),
+        title: const Text('Second Page'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),

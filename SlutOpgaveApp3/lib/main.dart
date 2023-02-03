@@ -17,18 +17,18 @@ class MyApp extends StatelessWidget {
       // `home` is the home page of the application.
       home: MainPage(
         name: '',
-        selectedAnimal: Animals.Dog,
-        color: Color(0xFF3E3E),
+        selectedAnimal: Animals.dog,
+        color: const Color(0xFF3E3E),
       ),
     );
   }
 }
 
 enum Animals {
-  Mother,
-  Father,
-  Cat,
-  Dog,
+  mother,
+  father,
+  cat,
+  dog,
 }
 
 class MainPage extends StatefulWidget {
@@ -68,7 +68,7 @@ class _MainPageState extends State<MainPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Main Page'),
+        title: const Text('Main Page'),
       ),
       body: Center(
         child: Column(
@@ -79,7 +79,7 @@ class _MainPageState extends State<MainPage> {
               width: 100.0,
               height: 100.0,
             ),
-            Text(
+            const Text(
               'Get ones name and colour',
               style: TextStyle(fontSize: 20),
             ),
@@ -96,11 +96,11 @@ class _MainPageState extends State<MainPage> {
                   ),
                 );
               },
-              child: Text('Get ones name'),
+              child: const Text('Get ones name'),
             ),
             Text(
               '${selectedAnimals.toString().split('.').last}s name: $name',
-              style: TextStyle(fontSize: 20),
+              style: const TextStyle(fontSize: 20),
             ),
             Visibility(
               child: ElevatedButton(
@@ -118,7 +118,7 @@ class _MainPageState extends State<MainPage> {
                     ),
                   );
                 },
-                child: Text('Get ones colour'),
+                child: const Text('Get ones colour'),
               ),
             ),
           ],
