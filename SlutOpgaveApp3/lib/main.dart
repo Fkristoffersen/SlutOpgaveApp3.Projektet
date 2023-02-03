@@ -2,19 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:slutopgavehentnavnogfarve/SecondPage.dart';
 import 'package:slutopgavehentnavnogfarve/ThirdPage.dart';
 
-// This is the main function, which starts the Flutter application.
+// Dette er den primære funktion, der starter Flutter-applikationen.
 void main() => runApp(MyApp());
 
-// `MyApp` is a `StatelessWidget` which returns a `MaterialApp` widget.
+// `MyApp` er en `StatelessWidget`, der returnerer en `MaterialApp`-widget.
 class MyApp extends StatelessWidget {
   static const String _title = 'Flutter Application';
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // `title` is the title of the application.
+      // `title` er titlen på applikationen.
       title: _title,
-      // `home` is the home page of the application.
+      // `home` er startsiden på applikationen.
       home: MainPage(
         name: '',
         selectedAnimal: Animals.dog,
@@ -46,17 +46,24 @@ class MainPage extends StatefulWidget {
   _MainPageState createState() => _MainPageState();
 }
 
+// Klassen _MainPageState er en udvidelse af State, som bruges til at vedligeholde tilstanden til widget'en MainPage.
 class _MainPageState extends State<MainPage> {
+  // Variablen `name` bruges til at gemme navnet på dyret.
   String name = '';
+  // Variablen `selectedAnimals` bruges til at gemme det valgte dyr/person.
   Animals selectedAnimals = Animals.values[0];
 
+  // initState metoden bliver kaldt, når denne tilstand bliver oprettet.
   @override
   void initState() {
+    // Sæt `name` til værdien i widget.name.
     name = widget.name;
+    // Sæt `selectedAnimals` til værdien i widget.selectedAnimal.
     selectedAnimals = widget.selectedAnimal;
     super.initState();
   }
 
+  // Metoden `updateData` opdaterer værdierne i `selectedAnimals` og `name`.
   void updateData(Animals animals, String text) {
     setState(() {
       selectedAnimals = animals;
@@ -64,6 +71,7 @@ class _MainPageState extends State<MainPage> {
     });
   }
 
+  // build metoden bruges til at definere, hvordan widgeten ser ud.
   @override
   Widget build(BuildContext context) {
     return Scaffold(
