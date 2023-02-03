@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       home: MainPage(
         name: '',
         selectedAnimal: Animals.Dog,
-        color: Color(0xFF000000),
+        color: Color(0xFF3E3E),
       ),
     );
   }
@@ -102,7 +102,6 @@ class _MainPageState extends State<MainPage> {
               style: TextStyle(fontSize: 20),
             ),
             Visibility(
-              visible: name.isNotEmpty,
               child: ElevatedButton(
                 onPressed: () {
                   Navigator.push(
